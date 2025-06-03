@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "univer-sheet-data-sync": [
+        "./src"
+      ],
+      "univer-sheet-data-sync/locale/*": [
+        "./src/locale/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "playground"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "univer-sheet-data-sync",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Easier way to sync data between Univer Sheets and custom data sources",
+  "keywords": [
+    "univer",
+    "sheets"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "prepack": "rm -rf dist && npm run build",
+    "build": "tsc",
+    "check-types": "tsc --noEmit",
+    "prettier": "prettier --write {src,playground}/**/*.{js,jsx,ts,tsx,json,css,scss,md,gql,graphql}"
+  },
+  "files": [
+    "dist/src",
+    "src"
+  ],
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./locale/*": {
+      "import": "./dist/src/locale/*.js",
+      "types": "./dist/src/locale/*.d.ts"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/lodash": "^4.17.16",
+    "@univerjs/presets": "0.8.0-nightly.202505291607",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  },
+  "peerDependencies": {
+    "@univerjs/core": "*",
+    "@univerjs/engine-render": "*",
+    "@univerjs/sheets": "*",
+    "@univerjs/sheets-ui": "*",
+    "@univerjs/ui": "*"
+  }
+}

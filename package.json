@@ -11,6 +11,7 @@
     "dev": "vite",
     "prepack": "rm -rf dist && npm run build",
     "build": "tsc",
+    "build-playground": "vite build",
     "check-types": "tsc --noEmit",
     "prettier": "prettier --write {src,playground}/**/*.{js,jsx,ts,tsx,json,css,scss,md,gql,graphql}"
   },

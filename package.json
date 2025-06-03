@@ -1,12 +1,19 @@
 {
   "name": "univer-sheet-data-sync",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Easier way to sync data between Univer Sheets and custom data sources",
   "keywords": [
     "univer",
     "sheets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utyfua/univer-sheet-data-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/utyfua/univer-sheet-data-sync/issues"
+  },
   "scripts": {
     "dev": "vite",
     "prepack": "rm -rf dist && npm run build",

@@ -3,6 +3,7 @@
 Easier way to sync data between Univer Sheets and custom data sources.
 
 To use please review the [playground example](https://github.com/utyfua/univer-sheet-data-sync/blob/master/playground/main.ts).
+Live preview is available [here](https://utyfua.github.io/univer-sheet-data-sync/).
 
 ## Notes
 

@@ -8,7 +8,7 @@ import { StateService } from '../services/state.service'
 
 export class WorksheetSyncController<
   Row = unknown,
-  NewRow extends NewRowBase | false = NewRowBase | false,
+  NewRow extends object | false = NewRowBase | false,
 > extends Disposable {
   constructor(
     private id: string,

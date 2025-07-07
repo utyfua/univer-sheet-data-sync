@@ -4,6 +4,7 @@ import {
   IObjectMatrixPrimitiveType,
   IWorksheetData,
   Inject,
+  Nullable,
   ObjectMatrix,
   ThemeService,
   Workbook,
@@ -25,7 +26,7 @@ export class SheetState {
   snapshot: Omit<IWorksheetData, 'cellData'> & {
     cellData: IObjectMatrixPrimitiveType<ICellDataWithSyncState>
   }
-  matrix: ObjectMatrix<ICellDataWithSyncState>
+  matrix: ObjectMatrix<Nullable<ICellDataWithSyncState>>
   syncOptions?: ISyncOptions
   computed!: ComputedOptions
   newRowsData: NewRowBase[] = []

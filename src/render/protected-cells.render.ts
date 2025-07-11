@@ -68,7 +68,7 @@ export class ProtectedCellsRenderExtension extends SheetExtension {
     }
 
     state.matrix.forValue((row, column, data) => {
-      const syncData = data.syncRef?.().syncData
+      const syncData = data?.syncRef?.().syncData
       if (!syncData || syncData?.isProtected) {
         fillCell(row, column)
       }

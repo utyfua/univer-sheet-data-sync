@@ -5,3 +5,4 @@
 - [ ] visual clues:
   - [ ] pending save & validation errors
   - [ ] custom clarification text
+- [ ] call `validateCellValue` when a worksheet data is updated

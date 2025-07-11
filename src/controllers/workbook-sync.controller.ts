@@ -77,10 +77,9 @@ export class WorkbookSyncController extends Disposable {
     return workbook
   }
 
-  addSheet<
-    Row = unknown,
-    NewRow extends NewRowBase | false = NewRowBase | false,
-  >(worksheet: IWorksheetDataPartial): WorksheetSyncController<Row, NewRow> {
+  addSheet<Row = unknown, NewRow extends object | false = NewRowBase | false>(
+    worksheet: IWorksheetDataPartial,
+  ): WorksheetSyncController<Row, NewRow> {
     const id = (worksheet.id ??= generateRandomId())
     let sheet = this.getWorksheetSyncController<Row, NewRow>(id)
     this._stateService.setState(id, { snapshot: worksheet })
@@ -102,7 +101,7 @@ export class WorkbookSyncController extends Disposable {
 
   getWorksheetSyncController<
     Row,
-    NewRow extends NewRowBase | false = NewRowBase | false,
+    NewRow extends object | false = NewRowBase | false,
   >(id: string): WorksheetSyncController<Row, NewRow> | undefined {
     return this._worksheetMap.get(id) as
       | WorksheetSyncController<Row, NewRow>

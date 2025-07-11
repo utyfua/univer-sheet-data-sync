@@ -8,7 +8,7 @@ import { StateService } from '../services/state.service'
 
 export class WorksheetSyncController<
   Row = unknown,
-  NewRow extends NewRowBase | false = NewRowBase | false,
+  NewRow extends object | false = NewRowBase | false,
 > extends Disposable {
   constructor(
     private id: string,
@@ -31,6 +31,8 @@ export class WorksheetSyncController<
   }
 
   getDataModel(): Readonly<ISyncOptions<Row, NewRow> | undefined> {
-    return this._stateService.getState(this.id)?.syncOptions as ISyncOptions<Row, NewRow> | undefined
+    return this._stateService.getState(this.id)?.syncOptions as
+      | ISyncOptions<Row, NewRow>
+      | undefined
   }
 }

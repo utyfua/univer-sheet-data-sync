@@ -1,12 +1,17 @@
 {
   "name": "univer-sheet-data-sync",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Easier way to sync data between Univer Sheets and custom data sources",
   "keywords": [
     "univer",
     "sheets"
   ],
+  "license": "MIT",
+  "author": {
+    "name": "Utyfua",
+    "email": "utyfua@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/utyfua/univer-sheet-data-sync.git"

@@ -37,7 +37,7 @@ export type NewRowBase = Record<string, Nullable<CellValue>>
 
 export type ICellSyncState<
   Row = unknown,
-  NewRow extends NewRowBase | false = NewRowBase | false,
+  NewRow extends object | false = NewRowBase | false,
 > = {
   /**
    * @inner
@@ -51,7 +51,7 @@ export type ICellSyncState<
 } & (
   | {
       isNewRow: true
-      row: NewRow extends NewRowBase ? NewRow : never
+      row: NewRow extends object ? NewRow : never
     }
   | {
       isNewRow?: false
@@ -61,7 +61,7 @@ export type ICellSyncState<
 
 export type IColumn<
   Row = unknown,
-  NewRow extends NewRowBase | false = NewRowBase | false,
+  NewRow extends object | false = NewRowBase | false,
 > = {
   innerHidden?: boolean
   displayName?: string
@@ -80,7 +80,7 @@ export type IColumn<
     value: Nullable<CellValue>,
     cell: ICellSyncState<Row, NewRow>,
   ) => void
-} & (NewRow extends NewRowBase
+} & (NewRow extends object
   ? {
       key: keyof NewRow
     }
@@ -90,7 +90,7 @@ export type IColumn<
 
 export type ISyncOptions<
   Row = unknown,
-  NewRow extends NewRowBase | false = NewRowBase | false,
+  NewRow extends object | false = NewRowBase | false,
 > = {
   columns?: IColumn<Row, NewRow>[]
   showHeader?: boolean
@@ -99,7 +99,7 @@ export type ISyncOptions<
   getRowKey?: (row: Row) => string
   data?: Row[]
   onActiveListener?: () => IDisposable | void
-} & (NewRow extends NewRowBase
+} & (NewRow extends object
   ? {
       freeRows?: number
       freeRowDefault?: () => NewRow
